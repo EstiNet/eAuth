@@ -29,6 +29,11 @@
             <artifactId>jline</artifactId>
             <version>2.14.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.corundumstudio.socketio</groupId>
+            <artifactId>netty-socketio</artifactId>
+            <version>1.7.12</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -54,6 +59,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 

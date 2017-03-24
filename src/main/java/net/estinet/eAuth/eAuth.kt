@@ -14,7 +14,10 @@ object EstiConsole{
     }
 }
 
-val commands = ArrayList<Command>();
+val commands = ArrayList<Command>()
+
+val users = HashMap<UUID, String>()
+val curKeys = HashMap<UUID, UUID>()
 
 var console: ConsoleReader = ConsoleReader()
 private var stashed: CursorBuffer? = null
@@ -34,6 +37,14 @@ fun main(args: Array<String>){
 
     commands.add(net.estinet.eAuth.commands.VersionCommand())
     commands.add(net.estinet.eAuth.commands.HelpCommand())
+
+    /*
+     * Index MongoDB for auth.
+     */
+
+    /*
+     * Start SocketIO server
+     */
 
     /*
      * Start command system.
@@ -56,6 +67,10 @@ fun main(args: Array<String>){
             }
         }
     }
+}
+
+fun indexDatabase(){
+    
 }
 
 fun stashLine() {
