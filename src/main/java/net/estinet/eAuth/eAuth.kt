@@ -42,9 +42,13 @@ fun main(args: Array<String>){
      * Index MongoDB for auth.
      */
 
+    indexDatabase()
+
     /*
      * Start SocketIO server
      */
+
+    SocketIO.start()
 
     /*
      * Start command system.
@@ -70,7 +74,7 @@ fun main(args: Array<String>){
 }
 
 fun indexDatabase(){
-    
+
 }
 
 fun stashLine() {
