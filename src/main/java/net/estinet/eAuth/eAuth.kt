@@ -16,6 +16,12 @@ object EstiConsole{
 
 val commands = ArrayList<Command>()
 
+var port = 2169
+var pass = "pass123"
+var aPort = 3000
+var aIP = "localhost"
+var aPass = "pass123"
+
 val users = HashMap<UUID, String>()
 val curKeys = HashMap<UUID, UUID>()
 
