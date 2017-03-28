@@ -1,5 +1,6 @@
 package net.estinet.eAuth
 
+import com.corundumstudio.socketio.SocketIOClient
 import jline.console.ConsoleReader
 import jline.console.CursorBuffer
 import net.estinet.eAuth.commands.Command
@@ -15,6 +16,9 @@ object EstiConsole{
 }
 
 val commands = ArrayList<Command>()
+val adminSessions = HashMap<String, SocketIOClient>()
+
+var networkOn = false
 
 var port = 2169
 var pass = "pass123"
