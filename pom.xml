@@ -34,6 +34,11 @@
             <artifactId>netty-socketio</artifactId>
             <version>1.7.12</version>
         </dependency>
+        <dependency>
+            <groupId>com.aerospike</groupId>
+            <artifactId>aerospike-client</artifactId>
+            <version>[3.0.0,)</version>
+        </dependency>
     </dependencies>
 
     <build>

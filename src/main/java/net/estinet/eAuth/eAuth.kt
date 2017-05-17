@@ -5,6 +5,9 @@ import jline.console.ConsoleReader
 import jline.console.CursorBuffer
 import net.estinet.eAuth.commands.Command
 import java.util.*
+import com.aerospike.client.policy.ClientPolicy
+import com.aerospike.client.AerospikeClient
+import com.aerospike.client.Host
 
 object EstiConsole{
     val version = "v0.0.9"
@@ -19,6 +22,8 @@ val commands = ArrayList<Command>()
 val adminSessions = HashMap<String, SocketIOClient>()
 
 var networkOn = false
+
+
 
 var port = 2169
 var pass = "pass123"
@@ -49,7 +54,7 @@ fun main(args: Array<String>){
     commands.add(net.estinet.eAuth.commands.HelpCommand())
 
     /*
-     * Index MongoDB for auth.
+     * Index Aerospike for auth.
      */
 
     indexDatabase()
@@ -84,6 +89,8 @@ fun main(args: Array<String>){
 }
 
 fun indexDatabase(){
+    val hosts = arrayOf(Host("a.host", 3000), Host("another.host", 3000), Host("and.another.host", 3000))
+    val client = AerospikeClient(ClientPolicy(), *hosts)
 
 }
 

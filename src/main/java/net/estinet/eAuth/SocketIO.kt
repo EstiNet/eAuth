@@ -10,7 +10,7 @@ object SocketIO {
     fun start() {
         net.estinet.eAuth.println("Starting server...")
 
-        //EstiConsole.println("Initializing SSL context...")
+        //eAuth.println("Initializing SSL context...")
         //val sslContext = initSslContext()
 
         val config: Configuration = Configuration();
@@ -35,9 +35,12 @@ object SocketIO {
                 }
             }
         })
-        sslServer.addEventListener("ad", String::class.java, { client: SocketIOClient, data: String, ack: AckRequest ->
+        sslServer.addEventListener("auth", String::class.java, { client: SocketIOClient, data: String, ack: AckRequest ->
             run {
-                TODO("do yeah")
+                val user = data.split(" ")[0]
+                val pass = data.split(" ")[0]
+
+
             }
         })
         sslServer.start()
